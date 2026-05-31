@@ -1,7 +1,6 @@
 import HeroSection from "@/components/HeroSection"
 import CatalogForm from "@/components/CatalogForm"
 import QuizSection from "@/components/QuizSection"
-import { TextGradientScroll } from "@/components/ui/text-gradient-scroll"
 import { Timeline } from "@/components/ui/timeline"
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
 import { motion } from "framer-motion"
@@ -9,8 +8,28 @@ import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
 import Icon from "@/components/ui/icon"
 
 export default function Index() {
-  const missionStatement =
-    "Wellside Properties — это не просто агентство. Это ваш надёжный проводник в мире московской недвижимости. Мы работаем с лучшими застройщиками города, отбирая только проверенные жилые комплексы с прозрачными условиями. Наши эксперты знают рынок изнутри: от скрытых выгодных лотов до оптимальных ипотечных программ. Мы сопровождаем каждого клиента от первой консультации до получения ключей — без стресса, без скрытых комиссий, с полной юридической защитой вашей сделки."
+  const approachCards = [
+    {
+      icon: "Building2",
+      title: "Лучшие застройщики",
+      text: "Работаем только с проверенными застройщиками города, отбирая жилые комплексы с прозрачными условиями.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "Знаем рынок изнутри",
+      text: "Наши эксперты находят скрытые выгодные лоты и подбирают оптимальные ипотечные программы под каждого клиента.",
+    },
+    {
+      icon: "Shield",
+      title: "Юридическая защита",
+      text: "Полное юридическое сопровождение сделки — без скрытых комиссий и неприятных сюрпризов.",
+    },
+    {
+      icon: "Key",
+      title: "От звонка до ключей",
+      text: "Сопровождаем на каждом этапе: от первой консультации до получения ключей — без стресса.",
+    },
+  ]
 
   const timelineEntries = [
     {
@@ -48,10 +67,10 @@ export default function Index() {
       <HeroSection />
 
       {/* Mission Statement */}
-      <section id="mission" className="relative min-h-screen flex items-center justify-center py-20 bg-white">
+      <section id="mission" className="relative py-24 bg-white">
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,13 +80,35 @@ export default function Index() {
             >
               <span className="text-amber-700 text-sm font-semibold tracking-widest uppercase">О нас</span>
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-12 text-gray-900">НАШ ПОДХОД</h2>
-            <TextGradientScroll
-              text={missionStatement}
-              className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-gray-800"
-              type="word"
-              textOpacity="soft"
-            />
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-black tracking-wider text-gray-900"
+            >
+              НАШ ПОДХОД
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {approachCards.map((card, i) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="group relative bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors duration-300">
+                  <Icon name={card.icon} size={26} className="text-amber-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{card.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{card.text}</p>
+                <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
