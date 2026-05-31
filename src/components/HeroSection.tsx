@@ -168,15 +168,14 @@ export default function HeroSection() {
           >
             <button
               onClick={() => scrollToSection("#catalog")}
-              className="inline-flex items-center justify-center gap-2 w-64 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 text-base"
+              className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full px-8 py-4 transition-all duration-300 hover:scale-105 text-base whitespace-nowrap"
             >
               Получить каталог новостроек
             </button>
             <button
               onClick={() => scrollToSection("#quiz")}
-              className="flex items-center justify-center gap-2 w-64 text-white border border-white/40 rounded-full px-10 py-4 hover:bg-white/10 transition-all duration-300 font-semibold text-base backdrop-blur-sm"
+              className="inline-flex items-center justify-center text-white border border-white/40 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300 font-semibold text-base backdrop-blur-sm whitespace-nowrap"
             >
-              <Icon name="Sliders" size={18} />
               Подобрать квартиру
             </button>
           </motion.div>
