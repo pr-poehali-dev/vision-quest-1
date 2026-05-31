@@ -6,6 +6,7 @@ import { Timeline } from "@/components/ui/timeline"
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials"
 import { motion } from "framer-motion"
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
+import Icon from "@/components/ui/icon"
 
 export default function Index() {
   const missionStatement =
@@ -119,6 +120,61 @@ export default function Index() {
             </p>
           </motion.div>
           <StaggerTestimonials />
+        </div>
+      </section>
+
+      {/* River View Section */}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513326738677-b964603b136d?w=1600&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Animated side accent */}
+        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-amber-400 to-transparent" />
+
+        <div className="relative z-10 container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-400/50 rounded-full px-5 py-2 mb-8 backdrop-blur-sm">
+                <Icon name="Waves" size={14} className="text-amber-400" />
+                <span className="text-amber-300 text-sm font-semibold tracking-widest uppercase">Премиум-локация</span>
+              </div>
+
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+                КВАРТИРА<br />
+                <span className="text-amber-400">С ВИДОМ</span> НА<br />
+                МОСКВУ-РЕКУ
+              </h2>
+
+              <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-xl mx-auto">
+                Просыпаться с панорамным видом на воду — это не роскошь, а стиль жизни. Мы знаем каждый ЖК с видом на реку и подберём лучший вариант под ваш бюджет.
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-6 mb-10 text-white/80 text-sm">
+                <span className="flex items-center gap-2"><Icon name="CheckCircle" size={16} className="text-amber-400" /> Набережная Москвы-реки</span>
+                <span className="flex items-center gap-2"><Icon name="CheckCircle" size={16} className="text-amber-400" /> Панорамное остекление</span>
+                <span className="flex items-center gap-2"><Icon name="CheckCircle" size={16} className="text-amber-400" /> Закрытая территория</span>
+              </div>
+
+              <a
+                href="https://platform.wellside.ru/client_landing_form?item=387810597"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 text-base"
+              >
+                <Icon name="Building2" size={18} />
+                Выбрать квартиру
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
