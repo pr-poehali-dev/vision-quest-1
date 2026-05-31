@@ -188,7 +188,7 @@ export default function QuizSection() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-300 text-black font-bold rounded-full px-8 py-4 transition-all hover:scale-105 whitespace-nowrap"
+                    className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 disabled:bg-amber-300 text-black font-bold rounded-full px-10 py-4 transition-all hover:scale-105 whitespace-nowrap"
                   >
                     {loading ? <Icon name="Loader" size={18} className="animate-spin" /> : "Получить подборку"}
                   </button>

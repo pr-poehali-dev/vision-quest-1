@@ -174,7 +174,7 @@ export default function HeroSection() {
             </button>
             <button
               onClick={() => scrollToSection("#quiz")}
-              className="flex items-center gap-2 text-white border border-white/40 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300 font-semibold text-base backdrop-blur-sm"
+              className="flex items-center gap-2 text-white border border-white/40 rounded-full px-10 py-4 hover:bg-white/10 transition-all duration-300 font-semibold text-base backdrop-blur-sm"
             >
               <Icon name="Sliders" size={18} />
               Подобрать квартиру
