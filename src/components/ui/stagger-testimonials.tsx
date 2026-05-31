@@ -154,25 +154,27 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ position, testimonial
           height: 2,
         }}
       />
-      <img
-        src={testimonial.imgSrc || "/placeholder.svg"}
-        alt={`${testimonial.by.split(",")[0]}`}
-        className="mb-4 h-14 w-12 bg-gray-100 object-cover object-top"
-        style={{
-          boxShadow: "3px 3px 0px hsl(var(--background))",
-        }}
-      />
+      <div className="flex items-center gap-3 mb-4">
+        <img
+          src={testimonial.imgSrc || "/placeholder.svg"}
+          alt={`${testimonial.by.split(",")[0]}`}
+          className="h-14 w-12 shrink-0 bg-gray-100 object-cover object-top"
+          style={{
+            boxShadow: "3px 3px 0px hsl(var(--background))",
+          }}
+        />
+        <div className="flex flex-col">
+          <span className={cn("font-bold text-sm leading-tight", isCenter ? "text-white" : "text-gray-900")}>
+            {testimonial.by.split(",")[0]}
+          </span>
+          <span className={cn("text-xs italic", isCenter ? "text-gray-300" : "text-gray-500")}>
+            {testimonial.by.split(",").slice(1).join(",").trim()}
+          </span>
+        </div>
+      </div>
       <h3 className={cn("text-base sm:text-xl font-medium", isCenter ? "text-white" : "text-gray-900")}>
         "{testimonial.testimonial}"
       </h3>
-      <p
-        className={cn(
-          "absolute bottom-8 left-8 right-8 mt-2 text-sm italic",
-          isCenter ? "text-gray-300" : "text-gray-600",
-        )}
-      >
-        - {testimonial.by}
-      </p>
     </div>
   )
 }
