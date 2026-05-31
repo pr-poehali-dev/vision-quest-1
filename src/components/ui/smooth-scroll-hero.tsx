@@ -87,79 +87,79 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
           <div className="text-center text-white max-w-4xl mx-auto px-6">
             {/* Main CTA Heading */}
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-wider mb-6 leading-none">
-              ГОТОВ
+              ВАША КВАРТИРА
               <br />
-              <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
-                БЕЖАТЬ С НАМИ?
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+                В МОСКВЕ ЖДЁТ
               </span>
             </h2>
 
             {/* Supporting Text */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Присоединяйся к тысячам бегунов по всему миру, которые нашли свою команду,
+              Доверьте поиск профессионалам. 15 лет опыта, 3 500+ довольных семей,
               <br className="hidden md:block" />
-              раздвинули границы возможного и открыли свой истинный потенциал.
+              и ваша сделка с полной юридической защитой.
             </p>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-amber-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Users className="w-5 h-5 text-amber-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">50 000+</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Бегунов</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">3 500+</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">Сделок закрыто</div>
               </div>
 
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-amber-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-amber-300" />
                   </div>
                 </div>
                 <div className="text-2xl md:text-3xl font-black text-white mb-1">120+</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Городов мира</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">ЖК в базе</div>
               </div>
 
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-amber-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Calendar className="w-5 h-5 text-amber-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">365</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Дней в году</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">15 лет</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">На рынке Москвы</div>
               </div>
 
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Trophy className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-amber-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Trophy className="w-5 h-5 text-amber-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">10 000+</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Целей достигнуто</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">98%</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">Довольных клиентов</div>
               </div>
             </div>
 
             {/* CTA Button */}
             <LiquidButton
               size="xxl"
-              className="font-bold text-xl tracking-wide px-12 py-4 bg-gray-900 hover:bg-gray-800 text-white border-2 border-gray-900 hover:scale-105 transition-all duration-300"
+              className="font-bold text-xl tracking-wide px-12 py-4 bg-amber-500 hover:bg-amber-400 text-black hover:scale-105 transition-all duration-300"
             >
-              ВСТУПИТЬ В STRIDE
+              ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
             </LiquidButton>
 
             {/* Trust Indicators */}
             <div className="mt-12 pt-6 border-t border-white/20">
-              <p className="text-xs text-gray-400 mb-3 font-medium">НАМ ДОВЕРЯЮТ БЕГУНЫ ПО ВСЕМУ МИРУ</p>
+              <p className="text-xs text-gray-400 mb-3 font-medium">НАМ ДОВЕРЯЮТ ТЫСЯЧИ МОСКОВСКИХ СЕМЕЙ</p>
               <div className="flex flex-wrap justify-center items-center gap-4 text-gray-300">
-                <span className="text-xs font-semibold">ДЛЯ НОВИЧКОВ</span>
-                <span className="text-xs font-semibold">МИРОВОЕ СООБЩЕСТВО</span>
-                <span className="text-xs font-semibold">ПРОВЕРЕННЫЕ РЕЗУЛЬТАТЫ</span>
-                <span className="text-xs font-semibold">БЕСПЛАТНО</span>
+                <span className="text-xs font-semibold">БЕЗ СКРЫТЫХ КОМИССИЙ</span>
+                <span className="text-xs font-semibold">ЮРИДИЧЕСКАЯ ЗАЩИТА</span>
+                <span className="text-xs font-semibold">АККРЕДИТОВАННЫЕ ПАРТНЁРЫ</span>
+                <span className="text-xs font-semibold">МОСКВА</span>
               </div>
             </div>
           </div>
