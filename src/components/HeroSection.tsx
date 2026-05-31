@@ -166,13 +166,12 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <LiquidButton
-              size="xxl"
-              className="font-bold text-base tracking-wide bg-amber-500 hover:bg-amber-400"
+            <button
               onClick={() => scrollToSection("#catalog")}
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 text-base"
             >
               Получить каталог новостроек
-            </LiquidButton>
+            </button>
             <button
               onClick={() => scrollToSection("#quiz")}
               className="flex items-center gap-2 text-white border border-white/40 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300 font-semibold text-base backdrop-blur-sm"

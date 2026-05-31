@@ -145,12 +145,14 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
             </div>
 
             {/* CTA Button */}
-            <LiquidButton
-              size="xxl"
-              className="font-bold text-xl tracking-wide px-12 py-4 bg-amber-500 hover:bg-amber-400 text-black hover:scale-105 transition-all duration-300"
+            <a
+              href="https://platform.wellside.ru/client_landing_form?item=387810597"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full px-10 py-4 transition-all duration-300 hover:scale-105 text-base"
             >
-              ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
-            </LiquidButton>
+              Получить консультацию
+            </a>
 
             {/* Trust Indicators */}
             <div className="mt-12 pt-6 border-t border-white/20">
