@@ -169,7 +169,7 @@ export default function Index() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513326738677-b964603b136d?w=1600&q=80')" }}
+          style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/7d061667-7e52-4b72-b574-169f9cb21ff2/bucket/eabd63e4-fcae-42d7-a0a1-d77d4ac258a9.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/60" />
 
