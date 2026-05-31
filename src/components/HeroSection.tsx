@@ -3,7 +3,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/441fa92b-2ee5-4413-88b2-0fa66a51bc5a/bucket/2c646432-28a6-4887-8589-05d016c6239a.png"
-const HERO_IMAGE = "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=1920&q=90"
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/7d061667-7e52-4b72-b574-169f9cb21ff2/bucket/40331a3a-f2b6-4017-8a7c-f1387766988f.jpg"
 
 const navItems = [
   { name: "О нас", href: "#mission" },
