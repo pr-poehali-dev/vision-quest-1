@@ -1,24 +1,9 @@
-import { LiquidButton } from "@/components/ui/liquid-glass-button"
 import Icon from "@/components/ui/icon"
 import { useState } from "react"
 import { motion } from "framer-motion"
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/441fa92b-2ee5-4413-88b2-0fa66a51bc5a/bucket/2c646432-28a6-4887-8589-05d016c6239a.png"
-
-const slides = [
-  {
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80",
-    alt: "Панорама Москвы — новостройки и элитная недвижимость",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80",
-    alt: "Современный жилой комплекс в Москве",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80",
-    alt: "Интерьер современной квартиры в новостройке",
-  },
-]
+const HERO_IMAGE = "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=1920&q=90"
 
 const navItems = [
   { name: "О нас", href: "#mission" },
@@ -29,11 +14,7 @@ const navItems = [
 ]
 
 export default function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -43,13 +24,15 @@ export default function HeroSection() {
 
   return (
     <div id="hero" className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
-        style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}
+      {/* Background Image with fly-through animation */}
+      <motion.div
+        className="absolute inset-0 bg-cover bg-no-repeat scale-110"
+        style={{ backgroundImage: `url('${HERO_IMAGE}')`, backgroundPosition: "60% 40%" }}
+        animate={{ backgroundPosition: ["60% 40%", "45% 55%", "55% 45%", "60% 40%"] }}
+        transition={{ duration: 30, ease: "linear", repeat: Infinity }}
       >
         <div className="absolute inset-0 bg-black/55" />
-      </div>
+      </motion.div>
 
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between px-6 py-5 md:px-10 md:py-7">
@@ -164,7 +147,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-stretch"
           >
             <button
               onClick={() => scrollToSection("#catalog")}
@@ -174,7 +157,7 @@ export default function HeroSection() {
             </button>
             <button
               onClick={() => scrollToSection("#quiz")}
-              className="inline-flex items-center justify-center text-white border border-white/40 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300 font-semibold text-base backdrop-blur-sm whitespace-nowrap"
+              className="inline-flex items-center justify-center text-white border border-white/40 rounded-full px-8 py-4 hover:bg-white/10 transition-all duration-300 font-bold text-base backdrop-blur-sm whitespace-nowrap"
             >
               Подобрать квартиру
             </button>
@@ -194,27 +177,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Slider Nav */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-4">
-        <button onClick={prevSlide} className="text-white/70 hover:text-white transition-colors p-2" aria-label="Назад">
-          <Icon name="ChevronLeft" size={24} />
-        </button>
-        <div className="flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "bg-amber-400" : "bg-white/40 hover:bg-white/60"
-              }`}
-              aria-label={`Слайд ${index + 1}`}
-            />
-          ))}
-        </div>
-        <button onClick={nextSlide} className="text-white/70 hover:text-white transition-colors p-2" aria-label="Вперёд">
-          <Icon name="ChevronRight" size={24} />
-        </button>
-      </div>
     </div>
   )
 }
